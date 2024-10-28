@@ -7,3 +7,4 @@ summarizer/model/t5_cnn_model/* filter=lfs diff=lfs merge=lfs -text
 summarizer/model/t5_cnn_tokenizer/* filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 summarizer/model/t5_cnn_model/model.safetensors filter=lfs diff=lfs merge=lfs -text
+*.model filter=lfs diff=lfs merge=lfs -text
