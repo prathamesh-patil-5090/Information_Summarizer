@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Summarization</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .wrapper {
+          max-width: 600px;
+          width: 100%;
+          background: #fff;
+          padding: 40px 30px;
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+
+        .wrapper h2 {
+          font-size: 28px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 30px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 16px;
+          color: #333;
+        }
+
+        input[type="file"] {
+          margin-bottom: 20px;
+        }
+
+        button {
+          background: #4070f4;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+
+        button:hover {
+          background: #355dc9;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>PDF SUMMARIZATION</h2>
+        <form method="POST" action="{% url 'pdf_summary' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="file" name="pdf_file" accept="application/pdf" required />
+          <button type="submit">Upload and Summarize</button>
+      </form>      
+    </div>
+</body>
+</html>

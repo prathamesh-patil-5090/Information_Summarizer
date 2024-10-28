@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS link -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  padding: 10px;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.wrapper h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.wrapper form {
+  margin-top: 20px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: #4070f4;
+}
+
+.input-box.button input {
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 15px;
+  border-radius: 6px;
+}
+
+.input-box.button input:hover {
+  background: #355dc9;
+}
+
+.text h3 {
+  font-size: 14px;
+  color: #333;
+  margin-top: 15px;
+}
+
+.text h3 a {
+  color: #4070f4;
+  text-decoration: none;
+}
+
+.text h3 a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+
+  .wrapper h2 {
+    font-size: 24px;
+  }
+}
+
+        </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input-box button">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+        <div class="text">
+            <h3>Already have an account? <a href="{% url 'login' %}">Login here</a></h3>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .container {
+          max-width: 800px;
+          width: 100%;
+          background: #fff;
+          padding: 40px 30px;
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 28px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 30px;
+        }
+
+        p {
+          font-size: 18px;
+          color: #555;
+          line-height: 1.6;
+          text-align: justify;
+          margin-bottom: 20px;
+        }
+
+        .button-container {
+          margin-top: 20px;
+        }
+
+        .button {
+          background-color: #28a745;
+          color: #fff;
+          padding: 12px 24px;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+          background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Summarized Text</h1>
+        <p>{{ summary }}</p>
+        
+        <div class="button-container">
+            <a href="{% url 'homepage' %}" class="button">Back to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>

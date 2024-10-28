@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Summarizer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .wrapper {
+          max-width: 600px;
+          width: 100%;
+          background: #fff;
+          padding: 40px 30px;
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+
+        .wrapper h2 {
+          font-size: 28px;
+          font-weight: 700;
+          color: #333;
+          margin-bottom: 30px;
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .grid-item {
+          background: #4070f4;
+          color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          font-size: 18px;
+          text-align: center;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+
+        .grid-item:hover {
+          background: #355dc9;
+        }
+
+        .grid-item .icon {
+          font-size: 40px;
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .grid-item p {
+          font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>INFORMATION SUMMARIZER</h2>
+        <div class="grid-container">
+            <div class="grid-item" onclick="window.location.href='{% url 'upload' %}'">
+                <span class="icon">📝</span>
+                <p>TEXT SUMMARIZATION</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='/upload-url/'">
+                <span class="icon">🔗</span>
+                <p>BLOG SUMMARIZATION</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='/upload-video/'">
+                <span class="icon">🎥</span>
+                <p>YOUTUBE VIDEO SUMMARIZATION</p>
+            </div>
+            <div class="grid-item" onclick="window.location.href='/upload-pdf/'">
+                <span class="icon">📄</span>
+                <p>PDF SUMMARIZATION</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

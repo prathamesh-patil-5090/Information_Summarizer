@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Summarization</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .wrapper {
+            position: relative;
+            max-width: 450px;
+            width: 100%;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .wrapper h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #C7BEBE;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .button {
+            background: #4070f4;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #355dc9;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>BLOG WEBSITE SUMMARIZATION</h2>
+        <form id="uploadForm" method="POST" action="{% url 'summarize_url' %}">
+            {% csrf_token %}
+            <label for="urlInput">Enter Blog Website URL:</label>
+            <input type="text" id="urlInput" name="url" required>
+            <button type="submit" class="button">Summarize The Blog Article</button>
+        </form>
+    </div>
+</body>
+</html>

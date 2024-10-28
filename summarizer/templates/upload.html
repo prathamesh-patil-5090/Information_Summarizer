@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .wrapper {
+            position: relative;
+            max-width: 450px;
+            width: 100%;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .wrapper h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            color: #333;
+            border: 1.5px solid #C7BEBE;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            resize: none; /* Disable resizing */
+        }
+
+        .input-box textarea:focus,
+        .input-box textarea:valid {
+            border-color: #4070f4;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-box textarea:focus ~ label,
+        .input-box textarea:valid ~ label {
+            top: -5px;
+            color: #4070f4;
+            font-size: 12px;
+        }
+
+        .button {
+            background: #4070f4;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #355dc9;
+        }
+
+        .forget {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .forget a {
+            color: #4070f4;
+            text-decoration: none;
+        }
+
+        .forget a:hover {
+            text-decoration: underline;
+        }
+
+        .text h3 {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .text h3 a {
+            color: #4070f4;
+            text-decoration: none;
+        }
+
+        .text h3 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Upload Text for Summarization</h2>
+        <form id="uploadForm" method="POST" action="{% url 'summarize' %}">  <!-- Ensure this points to 'result' -->
+            {% csrf_token %}  <!-- CSRF token for security -->
+            <label for="textInput">Enter Text:</label>
+            <textarea id="textInput" name="textInput" rows="10" cols="50" required></textarea>
+            <br><br>
+            <button type="submit" class="button">Summarize</button>
+        </form>
+    </div>
+</body>
+</html>
