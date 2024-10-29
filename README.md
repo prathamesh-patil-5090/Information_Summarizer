@@ -37,7 +37,6 @@ Information Summarizer is designed to streamline the summarization process for v
 ## Requirements
 - Python 3.12
 - Django (version compatible with your Python version)
-- React and Node.js
 - Required Python libraries (see `requirements.txt`)
 
 ## Installation
