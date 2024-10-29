@@ -99,3 +99,14 @@ Information_Summarizer/
 5.  Open a pull request.
 ## License
 This project is licensed under the MIT License.
+
+## Screenshots:
+![image](https://github.com/user-attachments/assets/e791fae1-5043-4eb6-bdd8-243d4992cc37)
+
+![image](https://github.com/user-attachments/assets/2fd2c03b-2a4d-4881-a2d4-fc009794d49d)
+
+![image](https://github.com/user-attachments/assets/1c981543-9557-46ab-89fa-cacf97ed6975)
+
+![image](https://github.com/user-attachments/assets/bd596064-df7b-4ba2-8072-9c835d67cd45)
+
+
