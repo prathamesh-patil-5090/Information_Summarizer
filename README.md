@@ -14,25 +14,24 @@ Information Summarizer is a versatile tool built using Django, React, and Tailwi
 - [License](#license)
 
 ## Description
-Information Summarizer is designed to streamline the summarization process for various content types, leveraging AI models to produce concise, meaningful summaries. Users can upload text files, PDFs, DOCX documents, and input URLs or video links to generate summaries.
+Information Summarizer is designed to streamline the summarization process for various content types, leveraging AI models to produce concise, meaningful summaries. Users can upload text files, PDFs, and input URLs or video links to generate summaries.
 
 ## Features
 - Summarize various content types:
   - Plain text
   - PDF files
-  - DOCX files
   - Video transcripts from YouTube
   - Web URLs
 - User authentication (login and signup)
 - PDF and text file upload and summary generation
 - Video transcription and summarization using the `youtube-transcript-api`
-- Summarization models like T5-small and DistilBERT
+- Summarization models -  Trained T5-base, which trained on abisee/cnn_dailymail , 3.0.0. dataset of hugging face
 
 ## Technologies Used
 - **Frontend**: React, Tailwind CSS
 - **Backend**: Django, Django REST Framework
 - **Database**: SQLite
-- **OCR and Summarization**: PyTesseract, T5-small, DistilBERT
+- **OCR and Summarization**:  Trained T5-base, which trained on abisee/cnn_dailymail , 3.0.0. dataset of hugging face
 - **Other Libraries**: `youtube-transcript-api` for video transcription
 
 ## Requirements
@@ -62,7 +61,7 @@ python manage.py runserver
 ```
 ## Usage
 1.  Login and Signup: Access authentication features at the login page.
-2.  Upload Content: Go to the upload page to submit text, PDF, DOCX, or video links.
+2.  Upload Content: Go to the upload page to submit text, PDF, url , or video links.
 3.  Summary Generation: Choose the content type and receive a summarized version on the result page.
 ## Project Structure
 ```
