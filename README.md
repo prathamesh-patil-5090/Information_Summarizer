@@ -68,19 +68,29 @@ python manage.py runserver
 ```
 Information_Summarizer/
 ├── info_summarizer/
+│   ├── __init__.py
+│   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
+│   ├── wsgi.py
+├── pdfs/
+├── transcripts/
+├── summarizer/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
 │   ├── views.py
 │   └── templates/
 │       ├── login.html
 │       ├── upload.html
 │       └── result.html
-├── frontend/
-│   ├── src/
-│   ├── App.js
-│   └── index.js
 ├── README.md
+├── db.sqlite3
+├── manage.py
 └── requirements.txt
+
 ```
 ## Contribution Guidelines
 1.  Fork the repository.
